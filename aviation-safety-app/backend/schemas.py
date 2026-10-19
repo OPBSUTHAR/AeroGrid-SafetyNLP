@@ -180,6 +180,8 @@ class ProcessLogEntry(BaseModel):
 class SystemControlResponse(BaseModel):
     services: List[ServiceStatus]
     logs: Dict[str, List[str]]
+    model_loaded: bool = False
+    data_loaded: bool = False
 
 
 class PipelineStageProgress(BaseModel):

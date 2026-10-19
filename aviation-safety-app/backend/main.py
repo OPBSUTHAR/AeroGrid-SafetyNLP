@@ -396,7 +396,12 @@ async def get_system_status():
     for name in ProcessManager.SERVICES:
         logs[name] = proc_mgr.get_logs(name, since=200)
     
-    return SystemControlResponse(services=services, logs=logs)
+    return SystemControlResponse(
+        services=services,
+        logs=logs,
+        model_loaded=ml_service._model is not None,
+        data_loaded=ml_service._df is not None,
+    )
 
 
 @app.post("/api/system/control/{service_name}/{action}")

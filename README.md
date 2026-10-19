@@ -226,14 +226,14 @@ Deployed on Vercel: **https://aerogrid-safetynlp.vercel.app**
 
 ## 👥 Authors & Contributors
 
-This repository is a preserved public copy of the original project **[Hamilwt/Aviation_NLP_Project](https://github.com/Hamilwt/Aviation_NLP_Project)**, maintained by [@OPBSUTHAR](https://github.com/OPBSUTHAR) so that the full commit history and research work remain permanently available.
+This project is a **joint development by [@OPBSUTHAR](https://github.com/OPBSUTHAR) and [@Hamilwt](https://github.com/Hamilwt)** — both are co-authors of this work. This public copy preserves the full joint commit history (originally hosted as **[Hamilwt/Aviation_NLP_Project](https://github.com/Hamilwt/Aviation_NLP_Project)**) so that the shared research and engineering contributions remain permanently available.
 
-| Contributor | Role | Key contributions |
-|-------------|------|-------------------|
-| **[@OPBSUTHAR](https://github.com/OPBSUTHAR)** — OMPRAKASH SUTHAR | Lead Developer (23 commits) | Menu-driven TUI & complete aviation NLP pipeline, refactor to power-grid safety data, research document/report generation, `safety_nlp_pipeline` core, Streamlit dashboard, real-time monitoring & alerts, React + FastAPI web dashboard (all 6 pages), Ollama LLM data assistant, one-click launcher scripts |
-| **[@Hamilwt](https://github.com/Hamilwt)** — Mohammed Hamil P R | Original Author & Research Lead (4 commits) | Project inception & workspace setup, NASA ASRS data ingestion, domain preprocessing + model training, RAG semantic retrieval & explainable classification |
+| Co-Author | Key contributions |
+|-----------|-------------------|
+| **[@OPBSUTHAR](https://github.com/OPBSUTHAR)** — OMPRAKASH SUTHAR | Menu-driven TUI & complete aviation NLP pipeline, refactor to power-grid safety data, research document/report generation, `safety_nlp_pipeline` core, Streamlit dashboard, real-time monitoring & alerts, React + FastAPI web dashboard (all 6 pages), Ollama LLM data assistant, one-click launcher scripts |
+| **[@Hamilwt](https://github.com/Hamilwt)** — Mohammed Hamil P R | Project inception & workspace setup, NASA ASRS data ingestion, domain preprocessing + model training, RAG semantic retrieval & explainable classification |
 
-Both contributors are credited in the [contributors graph](https://github.com/OPBSUTHAR/AeroGrid-SafetyNLP/graphs/contributors) — the complete upstream commit history is preserved in this copy.
+Both co-authors are credited in the [contributors graph](https://github.com/OPBSUTHAR/AeroGrid-SafetyNLP/graphs/contributors) — the complete commit history of the joint work is preserved here.
 
 ---
 

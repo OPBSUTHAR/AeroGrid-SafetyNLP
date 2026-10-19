@@ -17,3 +17,7 @@ htmlcov/
 # Generated artifacts (download/train outputs)
 data/*.csv
 data/*.pkl
+
+# Vercel CLI
+.vercel
+.env*

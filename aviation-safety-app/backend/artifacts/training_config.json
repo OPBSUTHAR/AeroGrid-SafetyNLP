@@ -1,0 +1,18 @@
+{
+  "best_params": {
+    "sgd__alpha": "0.0001",
+    "sgd__class_weight": "balanced"
+  },
+  "best_cv_f1_weighted": 0.6815761704829387,
+  "n_classes": 28,
+  "n_train": 2877,
+  "n_test": 720,
+  "max_features": 5000,
+  "ngram_range": [
+    1,
+    2
+  ],
+  "test_size": 0.2,
+  "cv_folds": 3,
+  "random_state": 42
+}

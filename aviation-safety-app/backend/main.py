@@ -185,9 +185,11 @@ active_websockets: Dict[str, List[WebSocket]] = {"pipeline": [], "monitor": []}
 async def lifespan(app: FastAPI):
     # Startup
     logger.info("Starting Safety NLP API...")
-    # Load ML artifacts in background
-    load_thread = threading.Thread(target=ml_service.load_artifacts, daemon=True)
-    load_thread.start()
+    # Load ML artifacts in background (skipped when the Vercel entrypoint has
+    # already preloaded them during cold start)
+    if ml_service._model is None:
+        load_thread = threading.Thread(target=ml_service.load_artifacts, daemon=True)
+        load_thread.start()
     yield
     # Shutdown
     logger.info("Shutting down...")

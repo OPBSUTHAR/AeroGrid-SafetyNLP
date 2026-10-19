@@ -213,6 +213,17 @@ typescript: ^5.6.2
 
 ---
 
+## ☁️ Live Demo
+
+Deployed on Vercel: **https://aerogrid-safetynlp.vercel.app**
+
+- The React + Vite frontend is served from the CDN; the FastAPI backend runs as a Vercel
+  Python function (entrypoint [`index.py`](index.py)) with the trained model, dataset,
+  plots and NLTK corpora bundled in `aviation-safety-app/backend/{artifacts,nltk_data}`.
+- The serverless deployment has no local Ollama instance, so the Data Assistant
+  automatically falls back to its built-in rule-based analyst (`ollama_connected: false`).
+- Pipeline execution and monitoring controls (System page) are intended for local use.
+
 ## 👥 Authors & Contributors
 
 This repository is a preserved public copy of the original project **[Hamilwt/Aviation_NLP_Project](https://github.com/Hamilwt/Aviation_NLP_Project)**, maintained by [@OPBSUTHAR](https://github.com/OPBSUTHAR) so that the full commit history and research work remain permanently available.

@@ -1,0 +1,34 @@
+# Vercel deployment configuration.
+#
+# The entrypoint exposes the FastAPI `app` from index.py (repo root). Declaring
+# it explicitly prevents Vercel's automatic entrypoint detection from picking
+# the legacy Streamlit helper app.py or the pipeline's own main.py.
+[tool.vercel]
+entrypoint = "index:app"
+
+# Dependencies are mirrored in requirements.txt (kept in sync for tooling that
+# reads one or the other); training-only extras (datasets, matplotlib, seaborn,
+# pypdf, jinja2) are intentionally omitted to keep the function bundle lean.
+[project]
+name = "aerogrid-safetynlp"
+version = "2.1.0"
+description = "Aviation & Power-Grid Safety NLP pipeline with FastAPI backend and React dashboard"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.115.0",
+  "uvicorn[standard]==0.34.0",
+  "pydantic==2.10.6",
+  "pydantic-settings==2.9.0",
+  "python-multipart==0.0.9",
+  "python-dotenv==1.0.1",
+  "joblib==1.4.2",
+  "pandas==2.2.3",
+  "numpy==2.1.3",
+  "scikit-learn==1.6.1",
+  "scipy==1.14.1",
+  "requests==2.32.3",
+  "nltk==3.9.1",
+  "httpx==0.28.1",
+  "websockets==13.1",
+  "watchfiles==1.0.5",
+]

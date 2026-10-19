@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd aviation-safety-app/frontend && npm ci --no-audit --no-fund && npm run build",
+  "functions": {
+    "index.py": {
+      "includeFiles": "{aviation-safety-app/backend/*.py,aviation-safety-app/backend/artifacts/**,aviation-safety-app/backend/nltk_data/**,aviation-safety-app/frontend/dist/**}",
+      "excludeFiles": "{aviation-safety-app/backend/.venv/**,aviation-safety-app/backend/__pycache__/**,aviation-safety-app/backend/.env}"
+    }
+  }
+}

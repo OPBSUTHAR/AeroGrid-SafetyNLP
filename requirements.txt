@@ -1,30 +1,29 @@
-# Root-level meta-requirements.
+# Runtime dependencies for the Vercel deployment (FastAPI backend + dashboard).
 #
-# The actual dependencies live with the code that uses them:
-#   - safety_nlp_pipeline/requirements.txt   core NLP pipeline (fetch/train/eval/RAG/report/monitor)
-#   - aviation-safety-app/backend/requirements.txt   FastAPI backend
-#   - aviation-safety-app/frontend/package.json     React + TypeScript dashboard
+# Vercel installs this file for the Python function bundle (mirrored in
+# pyproject.toml). Local development installs the per-package files instead
+# (see start.py):
+#   - safety_nlp_pipeline/requirements.txt        (pipeline + training extras)
+#   - aviation-safety-app/backend/requirements.txt (backend)
+#   - aviation-safety-app/frontend/package.json    (frontend)
 #
-# This file is kept for reference and for the root-level helper scripts:
-#   - make_report.py    -> builds Aviation_NLP_Pipeline_Report.docx (needs python-docx)
-#   - app.py            -> legacy Textual terminal UI (needs textual)
-#
-# Install only what you actually need (the one-click launcher does this for you):
-#   python start.py
-#     -> installs safety_nlp_pipeline/requirements.txt + backend/requirements.txt + npm
+# Training-only extras (datasets, pyarrow, matplotlib, seaborn, pypdf, jinja2)
+# and the legacy helpers (textual, python-docx) are intentionally omitted here
+# to keep the deployment bundle lean.
 
-# Helper scripts at the repo root
-python-docx>=1.1     # make_report.py builds the DOCX report
-textual>=8.2         # legacy TUI (python app.py) - optional, kept for reference
-
-# Also mirrored here for convenience (the launcher installs the per-package files):
-pandas>=2.2
-scikit-learn>=1.5
-datasets>=3.0
-joblib>=1.4
-nltk>=3.8
-pypdf>=4.0
-requests>=2.31
-matplotlib>=3.8
-seaborn>=0.13
-jinja2>=3.1
+fastapi==0.115.0
+uvicorn[standard]==0.34.0
+pydantic==2.10.6
+pydantic-settings==2.9.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+joblib==1.4.2
+pandas==2.2.3
+numpy==2.1.3
+scikit-learn==1.6.1
+scipy==1.14.1
+requests==2.32.3
+nltk==3.9.1
+httpx==0.28.1
+websockets==13.1
+watchfiles==1.0.5

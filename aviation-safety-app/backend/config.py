@@ -78,7 +78,11 @@ LABEL_COL = "label"
 DOMAIN_COL = "domain"
 PROCESSED_COL = "processed_text"
 
-# Create directories
-for d in (settings.DATA_DIR, settings.RAW_DIR, settings.PLOTS_DIR, 
+# Create directories (best-effort: serverless hosts such as Vercel mount the
+# bundle read-only, so directory creation must never break the import)
+for d in (settings.DATA_DIR, settings.RAW_DIR, settings.PLOTS_DIR,
           settings.REPORTS_DIR, settings.WATCH_DIR):
-    d.mkdir(parents=True, exist_ok=True)
+    try:
+        d.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass

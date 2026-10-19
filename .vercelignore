@@ -1,0 +1,11 @@
+# Files that never need to be uploaded to Vercel
+# (kept in sync with the function bundle config in vercel.json)
+
+aviation-safety-app/frontend/node_modules
+aviation-safety-app/backend/.venv
+**/__pycache__
+**/*.pyc
+*.log
+safety_nlp_pipeline/pipeline.log
+safety_nlp_pipeline/data/raw
+.vscode

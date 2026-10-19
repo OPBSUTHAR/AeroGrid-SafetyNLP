@@ -67,3 +67,7 @@ frontend/src-tauri/*.app
 frontend/src-tauri/*.dmg
 frontend/src-tauri/*.exe
 frontend/src-tauri/*.msi
+
+# Vercel deployment bundle: keep trained model artifacts committed
+!backend/artifacts/
+!backend/artifacts/**
